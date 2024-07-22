@@ -525,7 +525,7 @@ class Constants
   /**
    * The maximum number of previous file paths for the Chart Editor to remember.
    */
-  public static final MAX_PREVIOUS_WORKING_FILES:Int = 10;
+  public static final MAX_PREVIOUS_WORKING_FILES:Int = 15;
 
   /**
    * The separator between an asset library and the asset path.

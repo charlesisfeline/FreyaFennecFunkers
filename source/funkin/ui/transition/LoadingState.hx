@@ -293,9 +293,8 @@ class LoadingState extends MusicBeatSubState
     FunkinSound.preparePurgeCache();
 
     // cache sounds!
-    FunkinSound.cacheSound(Paths.sound('missnote1'));
-    FunkinSound.cacheSound(Paths.sound('missnote2'));
-    FunkinSound.cacheSound(Paths.sound('missnote3'));
+    for (i in 0...4)
+      FunkinSound.cacheSound(Paths.sound('missnote' + i));
 
     FunkinSprite.cacheTexture(Paths.image('healthBar'));
     FunkinSprite.cacheTexture(Paths.image('menuDesat'));
