@@ -53,6 +53,7 @@ import funkin.play.notes.notekind.NoteKindManager;
 import funkin.play.scoring.Scoring;
 import funkin.play.song.Song;
 import funkin.play.stage.Stage;
+import funkin.play.stage.Bopper;
 import funkin.save.Save;
 import funkin.ui.debug.charting.ChartEditorState;
 import funkin.ui.debug.stage.StageOffsetSubState;
@@ -200,7 +201,7 @@ class PlayState extends MusicBeatSubState
   public var needsReset:Bool = false;
 
   /**
-   * Resets the Characters and their sprites.
+   * Resets the characters and their sprites.
    * Gets disabled once resetting happens.
   **/
   public var needsCharacterReset:Bool = false;
@@ -909,10 +910,9 @@ class PlayState extends MusicBeatSubState
 
   function updatePercentage()
   {
-    // this will be fixed to be accurate to how the results screen works
+    // This will be fixed to be accurate to how the results screen works.
     var totalNotesHit = Highscore.tallies.totalNotesHit;
     totalNotesHit = totalNotesHit - songMisses;
-    // trace('Total Played: $totalPlayed | Total Notes Hit: $totalNotesHit');
     ratingPercent = Math.min(1, Math.max(0, totalNotesHit / totalPlayed));
   }
 
@@ -929,7 +929,7 @@ class PlayState extends MusicBeatSubState
     updateScoreText();
     updateCombo();
 
-    // Handle restarting the song when needed (player death or pressing Retry)
+    // Handle restarting the song when needed. (player death or pressing Retry)
     if (needsReset)
     {
       if (!assertChartExists()) return;
@@ -1002,7 +1002,7 @@ class PlayState extends MusicBeatSubState
       // Delete all notes and reset the arrays.
       regenNoteData();
 
-      // Reset camera zooming
+      // Reset the camera zooming.
       cameraBopIntensity = Constants.DEFAULT_BOP_INTENSITY;
       hudCameraZoomIntensity = (cameraBopIntensity - 1.0) * 2.0;
       cameraZoomRate = Constants.DEFAULT_ZOOM_RATE;
@@ -1117,8 +1117,6 @@ class PlayState extends MusicBeatSubState
     FlxG.watch.addQuick('health', health);
     FlxG.watch.addQuick('cameraBopIntensity', cameraBopIntensity);
 
-    // TODO: Add a song event for Handle GF dance speed.
-
     // Handle player death.
     if (!isInCutscene && !disableKeys)
     {
@@ -1126,14 +1124,14 @@ class PlayState extends MusicBeatSubState
       if (controls.RESET)
       {
         health = Constants.HEALTH_MIN;
-        trace('RESET = True');
+        // trace('RESET = True');
       }
 
       #if CAN_CHEAT // brandon's a pussy
       if (controls.CHEAT)
       {
         health += 0.25 * Constants.HEALTH_MAX; // +25% health.
-        trace('User is cheating!');
+        // trace('User is cheating!');
       }
       #end
 
