@@ -48,6 +48,8 @@ class MainMenuState extends MusicBeatState
 
   static var rememberedSelectedIndex:Int = 0;
 
+  public static var kitsuneVersion:String = "v0.1.0";
+
   public function new(?_overrideMusic:Bool = false)
   {
     super();
@@ -170,7 +172,7 @@ class MainMenuState extends MusicBeatState
 
     // This has to come AFTER!
     this.leftWatermarkText.text = "FNF " + Constants.VERSION;
-    this.rightWatermarkText.text = "FreyaFennec_Funkers v1.0";
+    this.rightWatermarkText.text = "Kitsune Engine " + kitsuneVersion;
 
     // NG.core.calls.event.logEvent('swag').send();
   }

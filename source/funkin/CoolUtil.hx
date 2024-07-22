@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.group.FlxGroup;
 import lime.app.Application;
 import openfl.Lib;
+import flixel.util.FlxColor;
 import lime.utils.Assets;
 import sys.FileSystem;
 import flixel.tweens.FlxEase;

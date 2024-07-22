@@ -93,12 +93,14 @@ class Save
           noteSplash: true,
           naughtyness: true,
           downscroll: false,
-          ghostTapping: false,
+          ghostTapping: true,
           antialiasing: true,
           middlescroll: false,
           flashingLights: true,
           zoomCamera: true,
-          debugDisplay: false,
+          coloredHealthBar: true,
+          expandedScore: true,
+          debugDisplay: true,
           autoPause: true,
           inputOffset: 0,
           audioVisualOffset: 0,
@@ -1090,7 +1092,7 @@ typedef SaveDataOptions =
   /**
    * If true, the player will not receive the ghost miss penalty if there are no notes within the hit window.
    * This is the thing people have been begging for forever lolol.
-   * @default `false`
+   * @default `true`
    */
   var ghostTapping:Bool;
 
@@ -1114,15 +1116,27 @@ typedef SaveDataOptions =
 
   /**
    * If disabled, the camera bump synchronized to the beat.
-   * @default `false`
+   * @default `true`
    */
   var zoomCamera:Bool;
 
   /**
+   * If disabled, the score text gets simplified to just the score display part.
+   * @default `true`
+   */
+  var expandedScore:Bool;
+
+  /**
    * If enabled, an FPS and memory counter will be displayed even if this is not a debug build.
-   * @default `false`
+   * @default `true`
    */
   var debugDisplay:Bool;
+
+  /**
+   * Changes default health bar colors to characters dominant color from health icon.
+   * @default `true`
+   */
+  var coloredHealthBar:Bool;
 
   /**
    * If enabled, the game will automatically pause when tabbing out.
@@ -1295,7 +1309,7 @@ typedef SaveDataChartEditorOptions =
 
   /**
    * Theme in the Chart Editor.
-   * @default `ChartEditorTheme.Light`
+   * @default `ChartEditorTheme.Dark`
    */
   var ?theme:ChartEditorTheme;
 

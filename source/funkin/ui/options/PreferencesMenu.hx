@@ -121,9 +121,15 @@ class PreferencesMenu extends Page
     createPrefItemCheckbox('Middlescroll', 'Enable to move the player strums to the center', function(value:Bool):Void {
       Preferences.middlescroll = value;
     }, Preferences.middlescroll);
+    createPrefItemCheckbox('Expanded Score Text', 'Enable to display misses and accuracy', function(value:Bool):Void {
+      Preferences.expandedScore = value;
+    }, Preferences.expandedScore);
     createPrefItemCheckbox('Note Splashes', 'Disable to remove splash animations when hitting notes', function(value:Bool):Void {
       Preferences.noteSplash = value;
     }, Preferences.noteSplash);
+    createPrefItemCheckbox('Colored Health Bar', 'Enable to use the health bar with character-based colors', function(value:Bool):Void {
+      Preferences.coloredHealthBar = value;
+    }, Preferences.coloredHealthBar);
     createPrefItemCheckbox('Flashing Lights', 'Disable to dampen flashing effects', function(value:Bool):Void {
       Preferences.flashingLights = value;
     }, Preferences.flashingLights);

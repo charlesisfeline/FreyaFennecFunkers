@@ -134,13 +134,13 @@ class Preferences
   /**
    * If true, the player will not receive the ghost miss penalty if there are no notes within the hit window.
    * This is the thing people have been begging for forever lolol.
-   * @default `false`
+   * @default `true`
    */
   public static var ghostTapping(get, set):Bool;
 
   static function get_ghostTapping():Bool
   {
-    return Save?.instance?.options?.ghostTapping ?? false;
+    return Save?.instance?.options?.ghostTapping ?? true;
   }
 
   static function set_ghostTapping(value:Bool):Bool
@@ -172,7 +172,7 @@ class Preferences
 
   /**
    * If disabled, the camera bump synchronized to the beat.
-   * @default `false`
+   * @default `true`
    */
   public static var zoomCamera(get, set):Bool;
 
@@ -190,8 +190,27 @@ class Preferences
   }
 
   /**
+   * If disabled, the score text gets simplified to just the score display part.
+   * @default `true`
+   */
+  public static var expandedScore(get, set):Bool;
+
+  static function get_expandedScore():Bool
+  {
+    return Save?.instance?.options?.expandedScore;
+  }
+
+  static function set_expandedScore(value:Bool):Bool
+  {
+    var save:Save = Save.instance;
+    save.options.expandedScore = value;
+    save.flush();
+    return value;
+  }
+
+  /**
    * If enabled, an FPS and memory counter will be displayed even if this is not a debug build.
-   * @default `false`
+   * @default `true`
    */
   public static var debugDisplay(get, set):Bool;
 
@@ -230,6 +249,25 @@ class Preferences
 
     var save:Save = Save.instance;
     save.options.autoPause = value;
+    save.flush();
+    return value;
+  }
+
+  /**
+   * Changes default health bar colors to characters dominant color from health icon.
+   * @default `true`
+   */
+  public static var coloredHealthBar(get, set):Bool;
+
+  static function get_coloredHealthBar():Bool
+  {
+    return Save?.instance?.options?.coloredHealthBar ?? true;
+  }
+
+  static function set_coloredHealthBar(value:Bool):Bool
+  {
+    var save:Save = Save.instance;
+    save.options.coloredHealthBar = value;
     save.flush();
     return value;
   }
