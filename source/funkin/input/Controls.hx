@@ -349,9 +349,6 @@ class Controls extends FlxActionSet
 
   public function check(name:Action, trigger:FlxInputState = JUST_PRESSED, gamepadOnly:Bool = false):Bool
   {
-    #if debug
-    if (!byName.exists(name)) throw 'Invalid name: $name';
-    #end
     var action = byName[name];
     if (gamepadOnly) return action.checkFiltered(trigger, GAMEPAD);
     else
@@ -360,10 +357,6 @@ class Controls extends FlxActionSet
 
   public function getKeysForAction(name:Action):Array<FlxKey>
   {
-    #if debug
-    if (!byName.exists(name)) throw 'Invalid name: $name';
-    #end
-
     // TODO: Revert to `.map().filter()` once HashLink doesn't complain anymore.
     var result:Array<FlxKey> = [];
     for (input in byName[name].inputs)
@@ -375,10 +368,6 @@ class Controls extends FlxActionSet
 
   public function getButtonsForAction(name:Action):Array<FlxGamepadInputID>
   {
-    #if debug
-    if (!byName.exists(name)) throw 'Invalid name: $name';
-    #end
-
     var result:Array<FlxGamepadInputID> = [];
     for (input in byName[name].inputs)
     {

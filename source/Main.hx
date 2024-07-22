@@ -57,22 +57,14 @@ class Main extends Sprite
     // TODO: Replace with loadEnabledMods() once the user can configure the mod list.
     funkin.modding.PolymodHandler.loadAllMods();
 
-    if (stage != null)
-    {
-      init();
-    }
+    if (stage != null) init();
     else
-    {
       addEventListener(Event.ADDED_TO_STAGE, init);
-    }
   }
 
   function init(?event:Event):Void
   {
-    if (hasEventListener(Event.ADDED_TO_STAGE))
-    {
-      removeEventListener(Event.ADDED_TO_STAGE, init);
-    }
+    if (hasEventListener(Event.ADDED_TO_STAGE)) removeEventListener(Event.ADDED_TO_STAGE, init);
 
     setupGame();
   }
@@ -103,7 +95,7 @@ class Main extends Sprite
     initHaxeUI();
 
     flixel.system.FlxAssets.FONT_DEFAULT = "VCR OSD Mono";
-    
+
     // addChild gets called by the user settings code.
     fpsCounter = new FPS(10, 3, 0xFFFFFF);
 

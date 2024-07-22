@@ -392,6 +392,7 @@ class Constants
   /**
    * The amount of health the player gains when hitting a note with the KILLER rating.
    */
+  @:deprecated("Deprecated! This judgement was scrapped!")
   public static final HEALTH_KILLER_BONUS:Float = 2.0 / 100.0 * HEALTH_MAX; // +2.0%
 
   /**
@@ -437,6 +438,8 @@ class Constants
 
   /**
    * The amount of health the player loses upon hitting a mine.
+   *
+   * I'mma just use this for a few note types, I guess...
    */
   public static final HEALTH_MINE_PENALTY:Float = 15.0 / 100.0 * HEALTH_MAX; // 15.0%
 
