@@ -26,7 +26,7 @@ class AdditionalsClassesMacro
       "haxe.ui.components",
       "haxe.ui.containers",
 
-      "lime"
+      "lime",
       "openfl",
       "sys", // ugh
       #if hxvlc
