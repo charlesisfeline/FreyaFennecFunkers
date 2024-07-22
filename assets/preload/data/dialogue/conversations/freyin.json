@@ -1,0 +1,350 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "breakfast",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "freya",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "enter",
+
+      "text": ["im just glad that over with"]
+    },
+
+    {
+      "speaker": "freya",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["that hater so annoying..."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["yep just glad we took em down."]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["You said it."]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Hold on, I gotta go clean my knife, I'll be right back."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "waving",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Okay, see ya, bye!"]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "silence",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "stare",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Hmm, I'm hungry."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "notice",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["*hears BF Kit whistling*"]
+    },
+    {
+      "speaker": "freya",
+      "speakerAnimation": "devious",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["ahh it looks like some fresh meat has step up our way"]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "what",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Huh?"]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "what",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Hey wait a sec..."]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["You're Freya_FennecFoxes right?"]
+    },
+    {
+      "speaker": "freya",
+      "speakerAnimation": "intro",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Why yes I a-"]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Mika better."]
+    },
+    {
+      "speaker": "freya",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["..."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["oh here we go again, now with a twist???"]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Have any of you guys seen that blocky furry?"]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["its killer animate, dont ya know the difference"]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Tomato, Tomato same thing."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "talk",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": [
+        "dude, he's flatter than a cube, at least learn some geometry, blue-dyed kitten"
+      ]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "back",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Hey guys, I'm back after cleaning my knife-"]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["*drops knife*"]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Who the hell is that."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": [
+        "another mika fan. apparently, he has a shirt unlike the rest, i dont know why..."
+      ]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Oh look its the blocky furry."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "screaming",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["ITS CALLED KILLER ANIMATE, ARE YOU MENTALLY INSANE?????"]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "shotgun",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["I have a shotgun and im not afraid to use it."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "explain",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": [
+        "nah, i own a glock, every mika fan that finds me gets shot with this thing."
+      ]
+    },
+    {
+      "speaker": "kanimate",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["..."]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Yeah right."]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "points",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["Anyways, I challange you to a rap battle!"]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "annoyed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["every mod with bf, does this, ofc."]
+    },
+    {
+      "speaker": "bfkit",
+      "speakerAnimation": "point",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["If you win, I'll let you kill me. But if I win, I'll kill you."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "looksatfreya",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["you really want to take that offer?"]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "eyeclosed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["if so..."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "eyeclosed",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["if so..."]
+    },
+    {
+      "speaker": "milky",
+      "speakerAnimation": "shrug",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["then i guess i have dinner tonight."]
+    },
+    {
+      "speaker": "freya",
+      "speakerAnimation": "deal",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["anything's better thna dealing with that idiot"]
+    },
+    {
+      "speaker": "freya",
+      "speakerAnimation": "point",
+      "box": "freya",
+      "boxAnimation": "speaking",
+
+      "text": ["youre on!"]
+    }
+  ]
+}

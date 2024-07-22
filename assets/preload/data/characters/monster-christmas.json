@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "name": "Monster (Christmas)",
+  "assetPath": "characters/monsterChristmas",
+  "offsets": [-25, 23],
+  "cameraOffsets": [1, 0],
+  "healthIcon": {
+    "id": "monster"
+  },
+  "animations": [
+    {
+      "name": "idle",
+      "prefix": "monster idle",
+      "offsets": [0, 0]
+    },
+    {
+      "name": "singRIGHT",
+      "prefix": "Monster left note",
+      "offsets": [-37, 9]
+    },
+    {
+      "name": "singDOWN",
+      "prefix": "monster down",
+      "offsets": [-55, -92]
+    },
+    {
+      "name": "singUP",
+      "prefix": "monster up note",
+      "offsets": [-25, 58]
+    },
+    {
+      "name": "singLEFT",
+      "prefix": "Monster Right note",
+      "offsets": [-50, 10]
+    }
+  ]
+}
