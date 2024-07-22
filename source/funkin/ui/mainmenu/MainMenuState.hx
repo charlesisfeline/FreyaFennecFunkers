@@ -37,6 +37,8 @@ import io.newgrounds.NG;
 
 class MainMenuState extends MusicBeatState
 {
+  var bg:FlxSprite;
+
   var menuItems:MenuTypedList<AtlasMenuItem>;
 
   var magenta:FlxSprite;
@@ -70,7 +72,7 @@ class MainMenuState extends MusicBeatState
     persistentUpdate = true;
     persistentDraw = true;
 
-    var bg:FlxSprite = new FlxSprite(Paths.image('menuBG'));
+    bg = new FlxSprite(Paths.image('menuBG'));
     bg.scrollFactor.x = 0;
     bg.scrollFactor.y = 0.17;
     bg.setGraphicSize(Std.int(bg.width * 1.2));

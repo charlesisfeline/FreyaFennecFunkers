@@ -5,6 +5,9 @@
   "singTime": 8.0,
   "offsets": [45, 80],
   "cameraOffsets": [-95, 0],
+  "pixelIcon": {
+    "id": "darnell"
+  },
   "animations": [
     {
       "name": "idle",

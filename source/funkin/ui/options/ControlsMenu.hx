@@ -66,7 +66,7 @@ class ControlsMenu extends funkin.ui.options.OptionsState.Page
     if (FlxG.gamepads.numActiveGamepads > 0)
     {
       var devicesBg:FunkinSprite = new FunkinSprite();
-      devicesBg.makeSolidColor(FlxG.width, 100, 0xFFFAFD6D);
+      devicesBg.makeSolidColor(FlxG.width, 100, 0x71FBFD6D);
       add(devicesBg);
       deviceList = new TextMenuList(Horizontal, None);
       add(deviceList);

@@ -5,6 +5,8 @@ import funkin.graphics.shaders.HSVShader;
 import funkin.graphics.shaders.GaussianBlurShader;
 import flixel.group.FlxGroup;
 import flixel.FlxSprite;
+import funkin.play.character.CharacterData;
+import funkin.play.character.CharacterData.CharacterDataParser;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import flixel.group.FlxSpriteGroup;
@@ -14,7 +16,6 @@ import flixel.text.FlxText;
 import flixel.util.FlxTimer;
 import funkin.util.MathUtil;
 import funkin.graphics.shaders.Grayscale;
-import funkin.graphics.shaders.GaussianBlurShader;
 import openfl.display.BlendMode;
 import funkin.graphics.FunkinSprite;
 import flixel.tweens.FlxEase;
@@ -531,23 +532,14 @@ class SongMenuItem extends FlxSpriteGroup
   {
     var charPath:String = "freeplay/icons/";
 
-    // TODO: Put this in the character metadata where it belongs.
-    // TODO: Also, can use CharacterDataParser.getCharPixelIconAsset()
-    switch (char)
+    var charPixelIconData = CharacterDataParser.getCharPixelIconData(char);
+    if (charPixelIconData == null)
     {
-      case 'monster-christmas':
-        charPath += 'monsterpixel';
-      case 'mom-car':
-        charPath += 'mommypixel';
-      case 'dad':
-        charPath += 'daddypixel';
-      case 'darnell-blazin':
-        charPath += 'darnellpixel';
-      case 'senpai-angry':
-        charPath += 'senpaipixel';
-      default:
-        charPath += '${char}pixel';
+      trace('[WARN] Character ${char} has no pixel icon data.');
+      return;
     }
+
+    charPath += '${charPixelIconData.id}pixel';
 
     if (!openfl.utils.Assets.exists(Paths.image(charPath)))
     {
@@ -558,15 +550,14 @@ class SongMenuItem extends FlxSpriteGroup
     pixelIcon.loadGraphic(Paths.image(charPath));
     pixelIcon.scale.x = pixelIcon.scale.y = 2;
 
-    switch (char)
-    {
-      case 'parents-christmas':
-        pixelIcon.origin.x = 140;
-      default:
-        pixelIcon.origin.x = 100;
-    }
-    // pixelIcon.origin.x = capsule.origin.x;
-    // pixelIcon.offset.x -= pixelIcon.origin.x;
+    // Set to 100 for default position
+    pixelIcon.origin.x = 100;
+
+    // Add the pixel icon origin with offsets for position adjustments
+    pixelIcon.origin.x += charPixelIconData.originOffsets[0];
+    pixelIcon.origin.y += charPixelIconData.originOffsets[1];
+    // Set whether or not to flip the pixel icon
+    pixelIcon.flipX = charPixelIconData.flipX;
   }
 
   var frameInTicker:Float = 0;

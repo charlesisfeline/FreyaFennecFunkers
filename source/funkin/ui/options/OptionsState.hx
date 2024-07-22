@@ -27,7 +27,7 @@ class OptionsState extends MusicBeatState
   {
     persistentUpdate = true;
 
-    FunkinSound.playMusic('optionsMenu',
+    FunkinSound.playMusic('optionsSong',
       {
         overrideExisting: true,
         restartTrack: false
@@ -51,7 +51,7 @@ class OptionsState extends MusicBeatState
     var mods = addPage(Mods, new ModMenu());
     var controls = addPage(Controls, new ControlsMenu());
     var wardrobe = addPage(Wardrobe, new CharacterSelect());
-    
+
     if (options.hasMultipleOptions())
     {
       options.onExit.add(exitToMainMenu);

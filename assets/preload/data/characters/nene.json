@@ -4,6 +4,9 @@
   "assetPath": "characters/Nene",
   "startingAnimation": "danceRight",
   "offsets": [-37, -85],
+  "pixelIcon": {
+    "id": "nene"
+  },
   "animations": [
     {
       "name": "danceLeft",

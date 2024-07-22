@@ -4,6 +4,9 @@
   "assetPath": "characters/gfTankmen",
   "startingAnimation": "danceLeft",
   "offsets": [-3.3, 2],
+  "pixelIcon": {
+    "id": "gf"
+  },
   "animations": [
     {
       "name": "danceLeft",

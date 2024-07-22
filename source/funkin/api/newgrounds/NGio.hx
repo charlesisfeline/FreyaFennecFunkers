@@ -240,7 +240,7 @@ class NGio
     trace('should have logged: ' + event);
     #else
     #if debug
-    trace('event:$event - not logged, missing NG.io lib');
+    trace('event:$event - not logged, lol');
     #end
     #end
   }
@@ -255,7 +255,8 @@ class NGio
     }
     #else
     #if debug
-    trace('medal:$id - not unlocked, missing NG.io lib');
+    trace('medal:$id - not unlocked! LOL (i will add gamejolt/trophy awards later)');
+    // TODO: Add trophies.
     #end
     #end
   }

@@ -4,6 +4,9 @@
   "assetPath": "characters/Monster_Assets",
   "offsets": [-25, 23],
   "cameraOffsets": [1, -17],
+  "pixelIcon": {
+    "id": "monster"
+  },
   "animations": [
     {
       "name": "idle",

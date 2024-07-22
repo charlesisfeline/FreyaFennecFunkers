@@ -3,6 +3,9 @@
   "name": "Mommy and Daddy (Festive)",
   "assetPath": "characters/mom_dad_christmas_assets",
   "offsets": [-15, 20],
+  "pixelIcon": {
+    "id": "parents-christmas"
+  },
   "animations": [
     {
       "name": "idle",

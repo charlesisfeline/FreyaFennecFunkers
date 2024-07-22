@@ -5,6 +5,9 @@
   "startingAnimation": "danceRight",
   "offsets": [0, 2],
   "singTime": 8.0,
+  "pixelIcon": {
+    "id": "gf"
+  },
   "animations": [
     {
       "name": "danceLeft",

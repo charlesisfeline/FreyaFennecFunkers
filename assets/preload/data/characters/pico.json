@@ -4,6 +4,9 @@
   "assetPath": "characters/Pico_Basic",
   "flipX": true,
   "offsets": [-5, 18],
+  "pixelIcon": {
+    "id": "pico"
+  },
   "animations": [
     {
       "name": "idle",
@@ -13,22 +16,22 @@
     {
       "name": "singRIGHT",
       "prefix": "Pico NOTE LEFT0",
-      "offsets": [-83,-11]
+      "offsets": [-83, -11]
     },
     {
       "name": "singDOWN",
       "prefix": "Pico Down Note0",
-      "offsets": [-42,-79]
+      "offsets": [-42, -79]
     },
     {
       "name": "singUP",
       "prefix": "pico Up note0",
-      "offsets": [-37,24]
+      "offsets": [-37, 24]
     },
     {
       "name": "singLEFT",
       "prefix": "Pico Note Right0",
-      "offsets": [57,1]
+      "offsets": [57, 1]
     }
   ]
 }

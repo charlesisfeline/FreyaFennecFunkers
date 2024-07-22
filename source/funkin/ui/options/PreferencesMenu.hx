@@ -13,20 +13,50 @@ import funkin.ui.TextMenuList.TextMenuItem;
 
 class PreferencesMenu extends Page
 {
+  inline static final DESC_BG_OFFSET_X = 15.0;
+  inline static final DESC_BG_OFFSET_Y = 15.0;
+  static var DESC_TEXT_WIDTH:Null<Float>;
+
   var items:TextMenuList;
   var preferenceItems:FlxTypedSpriteGroup<FlxSprite>;
 
+  var preferenceDesc:Array<String> = [];
+
   var menuCamera:FlxCamera;
   var camFollow:FlxObject;
+
+  var descText:FlxText;
+  var descTextBG:FlxSprite;
 
   public function new()
   {
     super();
 
+    if (DESC_TEXT_WIDTH == null) DESC_TEXT_WIDTH = FlxG.width * 0.8;
+
     menuCamera = new FunkinCamera('prefMenu');
     FlxG.cameras.add(menuCamera, false);
     menuCamera.bgColor = 0x0;
     camera = menuCamera;
+
+    descTextBG = new FlxSprite().makeGraphic(1, 1, 0x80000000);
+    descTextBG.scrollFactor.set();
+    descTextBG.antialiasing = false;
+    descTextBG.active = false;
+
+    descText = new FlxText(0, 0, 0, "idk buddy...", 26);
+    descText.scrollFactor.set();
+    descText.font = Paths.font("vcr.tff");
+    descText.alignment = CENTER;
+    descText.setBorderStyle(OUTLINE, FlxColor.BLACK, 2);
+    descText.antialiasing = Preferences.antialiasing;
+
+    descTextBG.x = descText.x - DESC_BG_OFFSET_X;
+    descTextBG.scale.x = descText.width + DESC_BG_OFFSET_X * 2;
+    descTextBG.updateHitbox();
+
+    add(descTextBG);
+    add(descText);
 
     add(items = new TextMenuList());
     add(preferenceItems = new FlxTypedSpriteGroup<FlxSprite>());
@@ -40,8 +70,32 @@ class PreferencesMenu extends Page
     var margin:Int = 100;
     menuCamera.deadzone.set(0, margin, menuCamera.width, menuCamera.height - margin * 2);
 
+    var prevIndex = 0;
+    var prevItem = items.selectedItem;
+
     items.onChange.add(function(selected) {
       camFollow.y = selected.y;
+
+      prevItem.x = 120;
+      selected.x = 150;
+
+      final newDesc = preferenceDesc[items.selectedIndex];
+      final showDesc = (newDesc != null && newDesc.length != 0);
+      descText.visible = descTextBG.visible = showDesc;
+      if (showDesc)
+      {
+        descText.text = newDesc;
+        descText.fieldWidth = descText.width > DESC_TEXT_WIDTH ? DESC_TEXT_WIDTH : 0;
+        descText.screenCenter(X).y = FlxG.height * 0.85 - descText.height * 0.5;
+
+        descTextBG.x = descText.x - DESC_BG_OFFSET_X;
+        descTextBG.y = descText.y - DESC_BG_OFFSET_Y;
+        descTextBG.scale.set(descText.width + DESC_BG_OFFSET_X * 2, descText.height + DESC_BG_OFFSET_Y * 2);
+        descTextBG.updateHitbox();
+      }
+
+      prevIndex = items.selectedIndex;
+      prevItem = selected;
     });
   }
 
@@ -54,7 +108,7 @@ class PreferencesMenu extends Page
       Preferences.ghostTapping = value;
     }, Preferences.ghostTapping);
     #if !web
-    createPrefItemNumber('FPS Cap', 'The cap of the framerate that the game is running on', function(value:Float) {
+    createPrefItemNumber('FPS Cap', 'Set the cap of the framerate that the game is running on', function(value:Float) {
       Preferences.framerate = Std.int(value);
     }, null, Preferences.framerate, 12, 360, 1, 0);
     #end
@@ -130,6 +184,7 @@ class PreferencesMenu extends Page
     }, true);
 
     preferenceItems.add(checkbox);
+    preferenceDesc.push(prefDesc);
   }
 
   function createPrefItemNumber(prefName:String, prefDesc:String, onChange:Float->Void, ?valueFormatter:Float->String, defaultValue:Int, min:Int, max:Int,

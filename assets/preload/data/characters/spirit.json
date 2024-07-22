@@ -8,6 +8,9 @@
   "renderType": "packer",
   "isPixel": true,
   "scale": 6,
+  "pixelIcon": {
+    "id": "spirit"
+  },
   "animations": [
     {
       "name": "idle",

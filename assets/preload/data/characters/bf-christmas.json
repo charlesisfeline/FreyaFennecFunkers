@@ -6,6 +6,9 @@
   "offsets": [0, 12],
   "cameraOffsets": [0, 1],
   "healthIcon": {
+    "id": "bf-christmas"
+  },
+  "pixelIcon": {
     "id": "bf"
   },
   "renderType": "multisparrow",

@@ -7,6 +7,9 @@
     "id": "pico",
     "flipX": false
   },
+  "pixelIcon": {
+    "id": "pico"
+  },
   "death": {
     "cameraOffsets": [10, -40],
     "cameraZoom": 1.0

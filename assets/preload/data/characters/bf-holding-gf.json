@@ -9,6 +9,9 @@
   "healthIcon": {
     "id": "bf"
   },
+  "pixelIcon": {
+    "id": "bf"
+  },
   "animations": [
     {
       "name": "singUP",

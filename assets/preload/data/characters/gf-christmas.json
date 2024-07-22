@@ -4,6 +4,9 @@
   "assetPath": "characters/gfChristmas",
   "startingAnimation": "danceLeft",
   "offsets": [-12, 35.5],
+  "pixelIcon": {
+    "id": "gf"
+  },
   "animations": [
     {
       "name": "danceLeft",

@@ -14,6 +14,9 @@
   "death": {
     "cameraOffsets": [200, 200]
   },
+  "pixelIcon": {
+    "id": "bf"
+  },
   "scale": 6,
   "animations": [
     {

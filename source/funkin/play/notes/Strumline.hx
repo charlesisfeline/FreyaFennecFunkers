@@ -655,8 +655,8 @@ class Strumline extends FlxSpriteGroup
 
   public function playNoteSplash(direction:NoteDirection):Void
   {
-    // TODO: Add a setting to disable note splashes.
-    // if (Settings.noSplash) return;
+    if (Preferences.noteSplash) return;
+
     if (!noteStyle.isNoteSplashEnabled()) return;
 
     var splash:NoteSplash = this.constructNoteSplash();
@@ -676,8 +676,8 @@ class Strumline extends FlxSpriteGroup
 
   public function playNoteHoldCover(holdNote:SustainTrail):Void
   {
-    // TODO: Add a setting to disable note splashes.
-    // if (Settings.noSplash) return;
+    if (Preferences.noteSplash) return;
+
     if (!noteStyle.isHoldNoteCoverEnabled()) return;
 
     var cover:NoteHoldCover = this.constructNoteHoldCover();

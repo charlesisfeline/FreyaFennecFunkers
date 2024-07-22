@@ -5,6 +5,9 @@
   "startingAnimation": "idle",
   "singTime": 8.0,
   "offsets": [118.6, 2],
+  "pixelIcon": {
+    "id": "pico"
+  },
   "animations": [
     {
       "name": "idle",

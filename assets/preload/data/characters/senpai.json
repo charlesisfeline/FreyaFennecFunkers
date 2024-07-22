@@ -10,6 +10,9 @@
     "id": "senpai",
     "isPixel": true
   },
+  "pixelIcon": {
+    "id": "senpai"
+  },
   "animations": [
     {
       "name": "idle",

@@ -2,6 +2,7 @@
 <project xmlns="http://lime.openfl.org/project/1.0.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/xsd/project-1.0.4.xsd">
 	<!-- _________________________ Application Settings _________________________ -->
+
 	<app title="FNF: FreyaFennec_Funkers" file="FreyaCrew" packageName="com.freyafennecfoxes.vsfreya" package="com.freyafennecfoxes.vsfreya" main="Main" version="0.4.1" company="FreyaFennecFoxes" />
 
 	<app file="KitsuneEngine_WIN" if="windows" />
@@ -9,7 +10,7 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<app file="KitsuneEngine_MAC" if="mac" />
 	<app file="KitsuneEngine_ANDROID" if="android" />
 	<app file="KitsuneEngine_IOS" if="ios" />
-	
+
 	<!--
 		Define the OpenFL sprite which displays the preloader.
 		You can't replace the preloader's logic here, sadly, but you can extend it.
@@ -19,7 +20,9 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 
 	<!--Minimum without FLX_NO_GAMEPAD: 11.8, without FLX_NO_NATIVE_CURSOR: 11.2-->
 	<set name="SWF_VERSION" value="11.8" />
+
 	<!-- ____________________________ Window Settings ___________________________ -->
+
 	<!--These window settings apply to all targets-->
 	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
 	<!--HTML5-specific-->
@@ -28,7 +31,9 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
 	<!--Mobile-specific-->
 	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false" />
+
 	<!-- _____________________________ Path Settings ____________________________ -->
+
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
 	<set name="BUILD_DIR" value="export/release" unless="debug" />

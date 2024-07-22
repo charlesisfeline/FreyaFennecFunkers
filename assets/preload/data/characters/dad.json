@@ -4,6 +4,9 @@
   "assetPath": "characters/daddyDearest",
   "offsets": [18, 16],
   "singTime": 8.0,
+  "pixelIcon": {
+    "id": "daddy"
+  },
   "animations": [
     {
       "name": "idle",

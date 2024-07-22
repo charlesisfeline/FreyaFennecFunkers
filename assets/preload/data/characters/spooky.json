@@ -5,6 +5,9 @@
   "offsets": [-20, 10],
   "singTime": 8.0,
   "startingAnimation": "danceRight",
+  "pixelIcon": {
+    "id": "spooky"
+  },
   "animations": [
     {
       "name": "danceLeft",

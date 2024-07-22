@@ -313,17 +313,13 @@ class FreeplayState extends MusicBeatSubState
       }
     }
 
-    // LOAD MUSIC
-
-    // LOAD CHARACTERS
-
-    trace(FlxG.width);
-    trace(FlxG.camera.zoom);
-    trace(FlxG.camera.initialZoom);
-    trace(FlxCamera.defaultZoom);
+    // trace(FlxG.width);
+    // trace(FlxG.camera.zoom);
+    // trace(FlxG.camera.initialZoom);
+    // trace(FlxCamera.defaultZoom);
 
     pinkBack = FunkinSprite.create('freeplay/pinkBack');
-    pinkBack.color = 0xFFFFD4E9; // sets it to pink!
+    pinkBack.color = 0xFFD17D00;
     pinkBack.x -= pinkBack.width;
 
     FlxTween.tween(pinkBack, {x: 0}, 0.6, {ease: FlxEase.quartOut});
@@ -370,7 +366,7 @@ class FreeplayState extends MusicBeatSubState
 
     FlxG.debugger.addTrackerProfile(new TrackerProfile(BGScrollingText, ['x', 'y', 'speed', 'size']));
 
-    moreWays = new BGScrollingText(0, 160, 'HOT BLOODED IN MORE WAYS THAN ONE', FlxG.width, true, 43);
+    moreWays = new BGScrollingText(0, 160, 'NOT KADE ENGINE', FlxG.width, true, 43);
     moreWays.funnyColor = 0xFFFFF383;
     moreWays.speed = 6.8;
     grpTxtScrolls.add(moreWays);
@@ -381,7 +377,7 @@ class FreeplayState extends MusicBeatSubState
         speed: 0.4,
       });
 
-    funnyScroll = new BGScrollingText(0, 220, 'BOYFRIEND', FlxG.width / 2, false, 60);
+    funnyScroll = new BGScrollingText(0, 220, 'FREYAFOXES', FlxG.width / 2, false, 60);
     funnyScroll.funnyColor = 0xFFFF9963;
     funnyScroll.speed = -3.8;
     grpTxtScrolls.add(funnyScroll);
@@ -394,7 +390,7 @@ class FreeplayState extends MusicBeatSubState
         wait: 0
       });
 
-    txtNuts = new BGScrollingText(0, 285, 'PROTECT YO NUTS', FlxG.width / 2, true, 43);
+    txtNuts = new BGScrollingText(0, 285, 'DEEZ NUTS', FlxG.width / 2, true, 43);
     txtNuts.speed = 3.5;
     grpTxtScrolls.add(txtNuts);
     exitMovers.set([txtNuts],
@@ -403,7 +399,8 @@ class FreeplayState extends MusicBeatSubState
         speed: 0.4,
       });
 
-    funnyScroll2 = new BGScrollingText(0, 335, 'BOYFRIEND', FlxG.width / 2, false, 60);
+    funnyScroll2 = new BGScrollingText(0, 335, 'https://discord.gg/Dzy6QenD5Z', FlxG.width / 2, false,
+      60); // a little piece of marketing for people to join our server nice
     funnyScroll2.funnyColor = 0xFFFF9963;
     funnyScroll2.speed = -3.8;
     grpTxtScrolls.add(funnyScroll2);
@@ -414,7 +411,7 @@ class FreeplayState extends MusicBeatSubState
         speed: 0.5,
       });
 
-    moreWays2 = new BGScrollingText(0, 397, 'HOT BLOODED IN MORE WAYS THAN ONE', FlxG.width, true, 43);
+    moreWays2 = new BGScrollingText(0, 397, 'TOXIC MIKA FANS ARE DUMB ASF', FlxG.width, true, 43);
     moreWays2.funnyColor = 0xFFFFF383;
     moreWays2.speed = 6.8;
     grpTxtScrolls.add(moreWays2);
@@ -425,7 +422,7 @@ class FreeplayState extends MusicBeatSubState
         speed: 0.4
       });
 
-    funnyScroll3 = new BGScrollingText(0, orangeBackShit.y + 10, 'BOYFRIEND', FlxG.width / 2, 60);
+    funnyScroll3 = new BGScrollingText(0, orangeBackShit.y + 10, 'WELL WELL WELL', FlxG.width / 2, 60);
     funnyScroll3.funnyColor = 0xFFFEA400;
     funnyScroll3.speed = -3.8;
     grpTxtScrolls.add(funnyScroll3);
@@ -461,7 +458,6 @@ class FreeplayState extends MusicBeatSubState
         speed: 0.5
       });
 
-    // TODO: Replace this.
     if (currentCharacter == 'pico' || currentCharacter == 'tankman' || currentCharacter == 'hank') dj.visible = false;
 
     add(dj);

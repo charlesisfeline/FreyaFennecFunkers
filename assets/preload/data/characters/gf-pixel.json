@@ -6,6 +6,9 @@
   "offsets": [0, 6],
   "isPixel": true,
   "scale": 6,
+  "pixelIcon": {
+    "id": "gf"
+  },
   "animations": [
     {
       "name": "danceLeft",
