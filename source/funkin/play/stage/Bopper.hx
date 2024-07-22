@@ -186,16 +186,13 @@ class Bopper extends StageProp implements IPlayStateScriptedClass
    */
   public function dance(forceRestart:Bool = false):Void
   {
-    if (this.animation == null)
-      return;
+    if (this.animation == null) return;
 
-    if (shouldAlternate == null)
-      update_shouldAlternate();
+    if (shouldAlternate == null) update_shouldAlternate();
 
     if (shouldAlternate)
     {
-      if (hasDanced)
-        playAnimation('danceRight$idleSuffix', forceRestart);
+      if (hasDanced) playAnimation('danceRight$idleSuffix', forceRestart);
       else
         playAnimation('danceLeft$idleSuffix', forceRestart);
       hasDanced = !hasDanced;
@@ -258,9 +255,8 @@ class Bopper extends StageProp implements IPlayStateScriptedClass
 
     this.animation.play(correctName, restart, reversed, 0);
 
-    if (ignoreOther)
-      canPlayOtherAnims = false;
-    
+    if (ignoreOther) canPlayOtherAnims = false;
+
     applyAnimationOffsets(correctName);
   }
 
@@ -331,6 +327,8 @@ class Bopper extends StageProp implements IPlayStateScriptedClass
   public function onSongEnd(event:ScriptEvent) {}
 
   public function onGameOver(event:ScriptEvent) {}
+
+  public function onPostGameOver(event:PostGameOverScriptEvent) {}
 
   public function onNoteIncoming(event:NoteScriptEvent) {}
 
