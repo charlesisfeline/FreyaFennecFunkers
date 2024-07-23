@@ -22,24 +22,6 @@ jobs:
        actions: write
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Pulling the new commit
-        uses: actions/checkout@main
-        with:
-          submodules: true # PLEASE LEAVE SUBMODULES ENABLED!!!!!!!!!!
-      - name: Setting up Haxe
-        uses: krdlab/setup-haxe@master
-        with:
-          haxe-version: 4.3.5
-      # Took the caching functions from Codename Engine, because yes!
-      - name: Restore existing build cache for faster compilation
-        id: cache-restore
-        uses: actions/cache/restore@v4
-        with:
-          key: cache-build-windows
-          path: |
-            export/release/windows/haxe/
-            export/release/windows/obj/
       - name: Install libraries and build
         run: |
           haxelib setup C:/haxelib
