@@ -49,6 +49,7 @@ jobs:
           haxelib install hmm --quiet
           haxelib run hmm setup
           haxelib run hmm install --quiet
+          haxelib install hxp
           haxelib run lime build windows
         shell: cmd
       - name: Uploading artifact (entire build)
