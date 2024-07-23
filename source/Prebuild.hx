@@ -13,6 +13,11 @@ class Prebuild
   {
     saveBuildTime();
     haxe.Log.trace('Building...', null);
+    #if !macro
+    haxe.Log.trace('You are not in macro mode, ok.', null);
+    #else
+    haxe.Log.trace("You're on macro mode, WHY are you macro mode?!?!?!?", null);
+    #end
   }
 
   static function saveBuildTime():Void
