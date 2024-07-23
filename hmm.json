@@ -167,14 +167,14 @@
       "name": "thx.core",
       "type": "git",
       "dir": null,
-      "ref": "22605ff44f01971d599641790d6bae4869f7d9f4",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/thx.core"
     },
     {
       "name": "thx.semver",
       "type": "git",
       "dir": null,
-      "ref": "cf8d213589a2c7ce4a59b0fdba9e8ff36bc029fa",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/thx.semver"
     }
   ]
