@@ -44,7 +44,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install libraries and build
         run: |
-          haxellib setup C:/haxelib
+          haxelib setup C:/haxelib
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib run hmm setup
