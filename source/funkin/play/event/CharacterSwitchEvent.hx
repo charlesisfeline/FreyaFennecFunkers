@@ -79,7 +79,7 @@ class CharacterSwitchEvent extends SongEvent
   public override function getEventSchema():SongEventSchema
   {
     /*var charIds:Array<String> = CharacterDataParser.listCharacterIds();
-    charIds.sort(SortUtil.alphabetically);*/
+      charIds.sort(SortUtil.alphabetically); */
 
     return new SongEventSchema([
       {
@@ -119,18 +119,18 @@ class CharacterSwitchEvent extends SongEvent
           'Senpai' => 'senpai',
           'Senpai (Angry)' => 'senpai-angry',
           'Spooky Kids' => 'spooky',
-          'Tankman' => 'tankman'
-          'Freya' => 'freya'
-          'Freya (Mad)' => 'freya-mad'
-          'Milky' => 'milky'
-          'Milky (Angy)' => 'milky-angy'
-          'Shadow Milky (Phase 1)' => 'shadow-milky'
-          'Shadow Milky (Phase 2)' => 'shadow-milky-phase-2'
-          'Killer Animate' => 'kanimate'
-          'Killer Animate (Angy)' => 'kanimate-angy'
+          'Tankman' => 'tankman',
+          'Freya' => 'freya',
+          'Freya (Mad)' => 'freya-mad',
+          'Milky' => 'milky',
+          'Milky (Angy)' => 'milky-angy',
+          'Shadow Milky (Phase 1)' => 'shadow-milky',
+          'Shadow Milky (Phase 2)' => 'shadow-milky-phase-2',
+          'Killer Animate' => 'kanimate',
+          'Killer Animate (Angy)' => 'kanimate-angy',
           'Mika_kit' => 'mika',
-          'Rocky' => 'rocky'
-          'Foxa' => 'foxa'
+          'Rocky' => 'rocky',
+          'Foxa' => 'foxa',
           'Isaiah' => 'isaiah'
         ]
       }
