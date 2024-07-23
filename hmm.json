@@ -37,7 +37,7 @@
       "name": "FlxPartialSound",
       "type": "git",
       "dir": null,
-      "ref": "f986332ba5ab02abd386ce662578baf04904604a",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/FlxPartialSound.git"
     },
     {
@@ -49,14 +49,14 @@
       "name": "funkin.vis",
       "type": "git",
       "dir": null,
-      "ref": "38261833590773cb1de34ac5d11e0825696fc340",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/funkVis"
     },
     {
       "name": "grig.audio",
       "type": "git",
       "dir": "src",
-      "ref": "57f5d47f2533fd0c3dcd025a86cb86c0dfa0b6d2",
+      "ref": null,
       "url": "https://gitlab.com/haxe-grig/grig.audio.git"
     },
     {
@@ -111,14 +111,14 @@
       "name": "json2object",
       "type": "git",
       "dir": null,
-      "ref": "a8c26f18463c98da32f744c214fe02273e1823fa",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/json2object"
     },
     {
       "name": "lime",
       "type": "git",
       "dir": null,
-      "ref": "872ff6db2f2d27c0243d4ff76802121ded550dd7",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/lime"
     },
     {
@@ -153,7 +153,7 @@
       "name": "openfl",
       "type": "git",
       "dir": null,
-      "ref": "228c1b5063911e2ad75cef6e3168ef0a4b9f9134",
+      "ref": null,
       "url": "https://github.com/FunkinCrew/openfl"
     },
     {
