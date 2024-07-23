@@ -1,39 +1,52 @@
 {
   "version": "1.0.0",
   "name": "Milky",
-  "assetPath": "characters/Pico_Basic",
-  "flipX": true,
+  "assetPath": "characters/Milky_Assets",
+  "offsets": [0, 0],
+  "danceEvery": 1,
+  "cameraOffsets": [0, 0],
+  "singTime": 8.0,
+  "isPixel": false,
+  "scale": 1.1,
+  "startingAnimation": "idle",
+  "renderType": "sparrow",
   "healthIcon": {
-    "id": "milky"
+    "offsets": [0, 0],
+    "id": "milky",
+    "flipX": false,
+    "isPixel": false,
+    "scale": 1
   },
   "pixelIcon": {
+    "originOffsets": [0, 0],
+    "flipX": false,
     "id": "milky"
   },
   "animations": [
     {
       "name": "idle",
-      "prefix": "Pico Idle Dance",
+      "prefix": "milky idle dance",
       "offsets": [0, 0]
     },
     {
       "name": "singRIGHT",
-      "prefix": "Pico NOTE LEFT0",
-      "offsets": [-68, -7]
+      "prefix": "milky sing right",
+      "offsets": [0, 0]
     },
     {
       "name": "singDOWN",
-      "prefix": "Pico Down Note0",
-      "offsets": [-20, -75]
+      "prefix": "milky sing down",
+      "offsets": [0, 0]
     },
     {
       "name": "singUP",
-      "prefix": "pico Up note0",
-      "offsets": [-29, 27]
+      "prefix": "milky sing up",
+      "offsets": [0, 0]
     },
     {
       "name": "singLEFT",
-      "prefix": "Pico Note Right0",
-      "offsets": [65, 9]
+      "prefix": "milky sing left",
+      "offsets": [0, 0]
     }
   ]
 }
