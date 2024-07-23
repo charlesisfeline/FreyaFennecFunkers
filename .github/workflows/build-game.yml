@@ -48,32 +48,32 @@ jobs:
           haxelib install hxcpp > /dev/null --quiet
           haxelib install hmm --quiet
           haxelib --never --quiet install format 3.5.0
-haxelib --never git haxeui-flixel https://github.com/haxeui/haxeui-flixel 63a906a6148958dbfde8c7b48d90b0693767fd95
-haxelib --never git haxeui-core https://github.com/haxeui/haxeui-core 0212d8fdfcafeb5f0d5a41e1ddba8ff21d0e183b
-haxelib --never git flixel https://github.com/FunkinCrew/flixel a7d8e3bad89a0a3506a4714121f73d8e34522c49
-haxelib --never git flixel-addons https://github.com/FunkinCrew/flixel-addons a523c3b56622f0640933944171efed46929e360e
-haxelib --never git flixel-ui https://github.com/HaxeFlixel/flixel-ui d0afed7293c71ffdb1184751317fc709b44c9056
-haxelib --never git flxanimate https://github.com/FunkinCrew/flxanimate 17e0d59fdbc2b6283a5c0e4df41f1c7f27b71c49
-haxelib --never git FlxPartialSound https://github.com/FunkinCrew/FlxPartialSound f986332ba5ab02abd386ce662578baf04904604a
-haxelib --never --quiet install flixel-text-input 1.1.0
-haxelib --never git funkin.vis https://github.com/FunkinCrew/funkVis 38261833590773cb1de34ac5d11e0825696fc340
-haxelib --never git grig.audio https://gitlab.com/haxe-grig/grig.audio 57f5d47f2533fd0c3dcd025a86cb86c0dfa0b6d2
-haxelib --never --quiet install hamcrest 3.0.0
-haxelib --never --quiet install hscript 2.5.0
-haxelib --never --quiet install hxcpp 4.3.2
-haxelib --never git hxcpp-debug-server https://github.com/FunkinCrew/hxcpp-debugger 147294123f983e35f50a966741474438069a7a8f hxcpp-debug-server
-haxelib --never --quiet install hxp 1.2.2
-haxelib --never  git json2object https://github.com/FunkinCrew/json2object a8c26f18463c98da32f744c214fe02273e1823fa
-haxelib --never git lime https://github.com/FunkinCrew/lime 872ff6db2f2d27c0243d4ff76802121ded550dd7
-haxelib --never git mconsole https://github.com/massive-oss/mconsole 06c0499ed8f80628a0e6e55ffa32c3cbd688a838
-haxelib --never git mcover https://github.com/massive-oss/mcover c3c47cd682b0b202a41caee95321989391b617ef src
-haxelib --never git mockatoo https://github.com/FunkinCrew/mockatoo 13d77a0a8eaf5e789ef5dae6cd33eee812deda36 src
-haxelib --never git munit https://github.com/FunkinCrew/MassiveUnit f61be7f7ba796595f45023ca65164a485aba0e7e src
-haxelib --never git openfl https://github.com/FunkinCrew/openfl 228c1b5063911e2ad75cef6e3168ef0a4b9f9134
-haxelib --never git polymod https://github.com/larsiusprime/polymod bfbe30d81601b3543d80dce580108ad6b7e182c7
-haxelib --never git thx.core https://github.com/FunkinCrew/thx.core 22605ff44f01971d599641790d6bae4869f7d9f4
-haxelib --never git thx.semver https://github.com/FunkinCrew/thx.semver cf8d213589a2c7ce4a59b0fdba9e8ff36bc029fa
-haxelib --never git hxCodec https://github.com/FunkinCrew/hxCodec 61b98a7a353b7f529a8fec84ed9afc919a2dffdd
+          haxelib --never git haxeui-flixel https://github.com/haxeui/haxeui-flixel 63a906a6148958dbfde8c7b48d90b0693767fd95
+          haxelib --never git haxeui-core https://github.com/haxeui/haxeui-core 0212d8fdfcafeb5f0d5a41e1ddba8ff21d0e183b
+          haxelib --never git flixel https://github.com/FunkinCrew/flixel a7d8e3bad89a0a3506a4714121f73d8e34522c49
+          haxelib --never git flixel-addons https://github.com/FunkinCrew/flixel-addons a523c3b56622f0640933944171efed46929e360e
+          haxelib --never git flixel-ui https://github.com/HaxeFlixel/flixel-ui d0afed7293c71ffdb1184751317fc709b44c9056
+          haxelib --never git flxanimate https://github.com/FunkinCrew/flxanimate 17e0d59fdbc2b6283a5c0e4df41f1c7f27b71c49
+          haxelib --never git FlxPartialSound https://github.com/FunkinCrew/FlxPartialSound f986332ba5ab02abd386ce662578baf04904604a
+          haxelib --never --quiet install flixel-text-input 1.1.0
+          haxelib --never git funkin.vis https://github.com/FunkinCrew/funkVis 38261833590773cb1de34ac5d11e0825696fc340
+          haxelib --never git grig.audio https://gitlab.com/haxe-grig/grig.audio 57f5d47f2533fd0c3dcd025a86cb86c0dfa0b6d2
+          haxelib --never --quiet install hamcrest 3.0.0
+          haxelib --never --quiet install hscript 2.5.0
+          haxelib --never --quiet install hxcpp 4.3.2
+          haxelib --never git hxcpp-debug-server https://github.com/FunkinCrew/hxcpp-debugger 147294123f983e35f50a966741474438069a7a8f hxcpp-debug-server
+          haxelib --never --quiet install hxp 1.2.2
+          haxelib --never  git json2object https://github.com/FunkinCrew/json2object a8c26f18463c98da32f744c214fe02273e1823fa
+          haxelib --never git lime https://github.com/FunkinCrew/lime 872ff6db2f2d27c0243d4ff76802121ded550dd7
+          haxelib --never git mconsole https://github.com/massive-oss/mconsole 06c0499ed8f80628a0e6e55ffa32c3cbd688a838
+          haxelib --never git mcover https://github.com/massive-oss/mcover c3c47cd682b0b202a41caee95321989391b617ef src
+          haxelib --never git mockatoo https://github.com/FunkinCrew/mockatoo 13d77a0a8eaf5e789ef5dae6cd33eee812deda36 src
+          haxelib --never git munit https://github.com/FunkinCrew/MassiveUnit f61be7f7ba796595f45023ca65164a485aba0e7e src
+          haxelib --never git openfl https://github.com/FunkinCrew/openfl 228c1b5063911e2ad75cef6e3168ef0a4b9f9134
+          haxelib --never git polymod https://github.com/larsiusprime/polymod bfbe30d81601b3543d80dce580108ad6b7e182c7
+          haxelib --never git thx.core https://github.com/FunkinCrew/thx.core 22605ff44f01971d599641790d6bae4869f7d9f4
+          haxelib --never git thx.semver https://github.com/FunkinCrew/thx.semver cf8d213589a2c7ce4a59b0fdba9e8ff36bc029fa
+          haxelib --never git hxCodec https://github.com/FunkinCrew/hxCodec 61b98a7a353b7f529a8fec84ed9afc919a2dffdd
         #  haxelib run hmm setup
         # haxelib run hmm install --quiet
           haxelib run lime build windows
