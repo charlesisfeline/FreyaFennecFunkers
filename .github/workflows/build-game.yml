@@ -40,8 +40,6 @@ jobs:
           path: |
             export/release/windows/haxe/
             export/release/windows/obj/
-
-      # Runs a set of commands using the runners shell
       - name: Install libraries and build
         run: |
           haxelib setup C:/haxelib
