@@ -54,24 +54,10 @@ jobs:
           haxelib run lime build windows
         shell: cmd
       - name: Uploading artifact (entire build)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.2.4
         with:
-          name: FreyaMod
+          name: FNFVsFreyaMod
           path: export/release/windows/bin
-      - name: Make a ZIP archive of files
-        run: |
-          7z a -tzip "FreyaMod.zip" "./export/release/windows/bin/*"
-      - name: Release build to GH
-        uses: softprops/action-gh-release@v1
-        with:
-          name: Freya Mod PRERELEASE 1 (${{github.run_number}})
-          tag_name: firstPreRelease_${{github.run_number}}
-          prerelease: true
-          target_commitish: "develop"
-          files: |
-            FreyaMod.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Clear already existing cache
         uses: actions/github-script@v6
         with:
