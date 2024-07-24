@@ -163,11 +163,19 @@ xsi:schemaLocation="http://lime.openfl.org/project/1.0.4 http://lime.openfl.org/
 	<haxeflag name="-dce no" />
 	<!-- Ensure all Funkin' classes are available at runtime. -->
 	<haxeflag name="--macro" value="include('funkin')" />
+	<!-- Ensure all UI components are available at runtime. -->
+	<haxeflag name="--macro" value="include('haxe.ui.backend.flixel.components')" />
+	<haxeflag name="--macro" value="include('haxe.ui.containers.dialogs')" />
+	<haxeflag name="--macro" value="include('haxe.ui.containers.menus')" />
+	<haxeflag name="--macro" value="include('haxe.ui.containers.properties')" />
+	<haxeflag name="--macro" value="include('haxe.ui.core')" />
+	<haxeflag name="--macro" value="include('haxe.ui.components')" />
+	<haxeflag name="--macro" value="include('haxe.ui.containers')" />
 	<!--
-		Ensure additional class packages are available at runtime (some only really used by scripts/modules).
+		Ensure additional class packages are available at runtime (some only really used by scripts).
 		Ignore packages we can't include.
 	-->
-	<haxeflag name="--macro" value="funkin.util.macro.AdditionalsClassesMacro.addAdditionalClasses()" />
+	<haxeflag name="--macro" value="include('flixel', true, [ 'flixel.addons.editors.spine.*', 'flixel.addons.nape.*', 'flixel.system.macros.*' ])" />
 	<!-- Necessary to provide stack traces for HScript. -->
 	<haxedef name="hscriptPos" />
 	<haxedef name="safeMode"/>
