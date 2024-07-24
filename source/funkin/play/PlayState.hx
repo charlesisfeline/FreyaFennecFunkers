@@ -771,8 +771,7 @@ class PlayState extends MusicBeatSubState
         currentChart.cacheInst();
         currentChart.cacheVocals();
 
-        currentChart.playInst(0.0, false);
-        FlxG.sound.music.stop();
+        currentChart.loadInst(1.0, currentInstrumental, false); // load inst to prevent syncing issues
       }
     }
 
@@ -1831,7 +1830,7 @@ class PlayState extends MusicBeatSubState
     //
     // BOYFRIEND
     //
-    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(CharacterSelect.BF == "" ? currentCharacterData.player : CharacterSelect.BF);
+    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(funkin.ui.options.CharacterSelect.BF == "" ? currentCharacterData.player : funkin.ui.options.CharacterSelect.BF);
 
     if (boyfriend != null)
     {
@@ -1849,7 +1848,7 @@ class PlayState extends MusicBeatSubState
     }
 
     // CREATE HEALTH BAR WITH CHARACTERS COLORS
-    if (Preferences.coloredHealthBar) healthBar.createFilledBar(iconP2.getDominantColor(), iconP1.getDominantColor());
+    if (Preferences.coloredHealthBar) healthBar.createFilledBar(iconP2.dominantColor(), iconP1.dominantColor());
 
     //
     // ADD CHARACTERS TO SCENE
