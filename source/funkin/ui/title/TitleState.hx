@@ -412,7 +412,7 @@ class TitleState extends MusicBeatState
 
   function cheatCodeShit():Void
   {
-    if (FlxG.keys.justPressed.ANY)
+    if (FlxG.keys.justPressed.ANY && !controls.VOLUME_MUTE && !controls.VOLUME_UP && !controls.VOLUME_DOWN)
     {
       if (controls.NOTE_DOWN_P || controls.UI_DOWN_P) codePress(FlxDirectionFlags.DOWN);
       if (controls.NOTE_UP_P || controls.UI_UP_P) codePress(FlxDirectionFlags.UP);
