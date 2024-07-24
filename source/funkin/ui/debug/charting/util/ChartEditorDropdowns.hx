@@ -159,8 +159,7 @@ class ChartEditorDropdowns
     "" => "Default",
     "~CUSTOM~" => "Custom",
     "noAnimation" => "No Animation",
-    // "hurt" => "Hurt Note",
-    // "heal" => "Heal Note",
+    // "mine" => "Hurt Note",
     // Freya Mod
     // "bullet" => "Bullet Note",
     // "knife" => "Knife Note",
