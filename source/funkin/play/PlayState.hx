@@ -686,7 +686,7 @@ class PlayState extends MusicBeatSubState
   var generatedMusic:Bool = false;
   var perfectMode:Bool = false;
 
-  static final BACKGROUND_COLOR:FlxColor = FlxColor.BLACK;
+  static final BACKGROUND_COLOR:FlxColor = FlxColor.WHITE;
 
   /**
    * Instantiate a new PlayState.
@@ -1750,7 +1750,7 @@ class PlayState extends MusicBeatSubState
   {
     // Create the green background.
     var menuBG = FunkinSprite.create('menuDesat');
-    menuBG.color = 0xFF4CAF50;
+    menuBG.color = FlxG.random.color();
     menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
     menuBG.updateHitbox();
     menuBG.screenCenter();
