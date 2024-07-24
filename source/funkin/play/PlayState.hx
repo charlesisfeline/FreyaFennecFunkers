@@ -1737,7 +1737,7 @@ class PlayState extends MusicBeatSubState
   {
     // Create the green background.
     var menuBG = FunkinSprite.create('menuDesat');
-    menuBG.color = 0xFF4CAF50;
+    menuBG.color = FlxG.random.color();
     menuBG.setGraphicSize(Std.int(menuBG.width * 1.1));
     menuBG.updateHitbox();
     menuBG.screenCenter();
