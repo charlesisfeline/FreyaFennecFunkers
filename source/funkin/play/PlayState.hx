@@ -1,5 +1,6 @@
 package funkin.play;
 
+import funkin.play.components.SongPosBar;
 import flixel.addons.display.FlxPieDial;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.transition.Transition;
@@ -556,6 +557,11 @@ class PlayState extends MusicBeatSubState
   var scoreText:FlxText;
 
   /**
+   * The bar which displays the song position.
+   */
+  var songPositionBar:SongPosBar;
+
+  /**
    * The bar which displays the player's health.
    * Dynamically updated based on the value of `healthLerp` (which is based on `health`).
    */
@@ -669,7 +675,7 @@ class PlayState extends MusicBeatSubState
   /**
    * The length of the current song, in milliseconds.
    */
-  var currentSongLengthMs(get, never):Float;
+  public var currentSongLengthMs(get, never):Float;
 
   function get_currentSongLengthMs():Float
   {
@@ -771,8 +777,7 @@ class PlayState extends MusicBeatSubState
         currentChart.cacheInst();
         currentChart.cacheVocals();
 
-        currentChart.playInst(0.0, false);
-        FlxG.sound.music.stop();
+        currentChart.loadInst(1.0, currentInstrumental, false); // load inst to prevent syncing issues
       }
     }
 
@@ -954,31 +959,31 @@ class PlayState extends MusicBeatSubState
     return true;
   }
 
-  var ratingFC:String = '';
-  var ratingPercent:Float;
+  /* var ratingFC:String = '';
+    var ratingPercent:Float;
 
-  function updateCombo()
-  {
-    ratingFC = 'Clear';
-    if (shits == 0 && bads == 0 && goods == 0 && sicks == 0 && songMisses == 0) ratingFC = '?';
-    if (songMisses < 1)
+    function updateCombo()
     {
-      if (bads > 0 || shits > 0) ratingFC = 'FC';
-      else if (goods > 0) ratingFC = 'GFC';
-      else if (sicks > 0) ratingFC = 'SFC';
+      ratingFC = 'Clear';
+      if (shits == 0 && bads == 0 && goods == 0 && sicks == 0 && songMisses == 0) ratingFC = '?';
+      if (songMisses < 1)
+      {
+        if (bads > 0 || shits > 0) ratingFC = 'FC';
+        else if (goods > 0) ratingFC = 'GFC';
+        else if (sicks > 0) ratingFC = 'SFC';
+      }
+      else if (songMisses < 10) ratingFC = 'SDCB';
+      updatePercentage();
     }
-    else if (songMisses < 10) ratingFC = 'SDCB';
-    updatePercentage();
-  }
 
-  function updatePercentage()
-  {
-    // This will be fixed to be accurate to how the results screen works.
-    var totalNotesHit = Highscore.tallies.totalNotesHit;
-    totalNotesHit = totalNotesHit - songMisses;
-    ratingPercent = Math.min(1, Math.max(0, totalNotesHit / totalPlayed));
-  }
-
+    function updatePercentage()
+    {
+      // This will be fixed to be accurate to how the results screen works.
+      var totalNotesHit = Highscore.tallies.totalNotesHit;
+      totalNotesHit = totalNotesHit - songMisses;
+      ratingPercent = Math.min(1, Math.max(0, totalNotesHit / totalPlayed));
+    }
+   */
   public override function update(elapsed:Float):Void
   {
     // TOTAL: 9.42% CPU Time when profiled in VS 2019.
@@ -990,7 +995,7 @@ class PlayState extends MusicBeatSubState
     var list = FlxG.sound.list;
     updateHealthBar();
     updateScoreText();
-    updateCombo();
+    // updateCombo();
 
     // Handle restarting the song when needed. (player death or pressing Retry)
     if (needsReset)
@@ -1694,6 +1699,13 @@ class PlayState extends MusicBeatSubState
     healthBar.zIndex = 800;
     add(healthBar);
 
+    if (Preferences.songPositionBar && !isMinimalMode)
+    {
+      songPositionBar = new SongPosBar();
+      songPositionBar.zIndex = 802;
+      add(songPositionBar);
+    }
+
     funnySexBox = new FlxSprite(healthBarBG.x + healthBarBG.width - 545, healthBarBG.y + 41).makeGraphic(500, 20, FlxColor.BLACK);
     funnySexBox.alpha = 0.3;
     add(funnySexBox);
@@ -1831,7 +1843,7 @@ class PlayState extends MusicBeatSubState
     //
     // BOYFRIEND
     //
-    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(CharacterSelect.BF == "" ? currentCharacterData.player : CharacterSelect.BF);
+    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(funkin.ui.options.CharacterSelect.BF == "" ? currentCharacterData.player : funkin.ui.options.CharacterSelect.BF);
 
     if (boyfriend != null)
     {
@@ -1850,6 +1862,9 @@ class PlayState extends MusicBeatSubState
 
     // CREATE HEALTH BAR WITH CHARACTERS COLORS
     if (Preferences.coloredHealthBar) healthBar.createFilledBar(iconP2.getDominantColor(), iconP1.getDominantColor());
+
+    // CREATE SONG POSITION BAR
+    if (Preferences.songPositionBar) songPositionBar.initSongPosBar();
 
     //
     // ADD CHARACTERS TO SCENE

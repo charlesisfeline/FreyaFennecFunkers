@@ -146,8 +146,8 @@ class DJBoyfriend extends FlxAtlasSprite
     {
       if (FlxG.keys.justPressed.SPACE || FlxG.keys.justPressed.EIGHT) currentState = (currentState == Idle ? TV : Idle);
       if (FlxG.keys.justPressed.NINE) currentState = (currentState == Idle ? Spook : Idle);
-      if (FlxG.keys.justPressed.SIX) dj.pumpFist();
-      if (FlxG.keys.justPressed.FIVE) dj.pumpFistBad();
+      if (FlxG.keys.justPressed.SIX) pumpFist();
+      if (FlxG.keys.justPressed.FIVE) pumpFistBad();
     }
   }
 

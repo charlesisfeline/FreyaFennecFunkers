@@ -3,6 +3,8 @@ package funkin.ui.options;
 import flixel.FlxCamera;
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.util.FlxColor;
+import flixel.text.FlxText;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import funkin.ui.AtlasText.AtlasFont;
 import funkin.ui.options.OptionsState.Page;
@@ -133,6 +135,9 @@ class PreferencesMenu extends Page
     createPrefItemCheckbox('Flashing Lights', 'Disable to dampen flashing effects', function(value:Bool):Void {
       Preferences.flashingLights = value;
     }, Preferences.flashingLights);
+    createPrefItemCheckbox('Song Position Bar', 'Enable to show the song position bar', function(value:Bool):Void {
+      Preferences.songPositionBar = value;
+    }, Preferences.songPositionBar);
     createPrefItemCheckbox('Camera Zooming on Beat', 'Disable to stop the camera bouncing to the song', function(value:Bool):Void {
       Preferences.zoomCamera = value;
     }, Preferences.zoomCamera);
