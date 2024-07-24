@@ -16,7 +16,7 @@ import funkin.util.FlxColor;
  *   rather than relying on PlayState to command it.
  * - The health icon now supports animations.
  * 	 - The health icon will now search for a SparrowV2 (XML) spritesheet, and use that for rendering if it can.
- * 	 - If it can't find a spritesheet, it will the old format; a two-frame 300x150 image.
+ * 	 - If it can't find a spritesheet, it will go with the old format; either a two-frame 300x150 image or a three-frame 450x150 image.
  *   - If the spritesheet is found, the health icon will attempt to load and use the following animations as appropriate:
  * 		 - `idle`, `winning`, `losing`, `toWinning`, `fromWinning`, `toLosing`, `fromLosing`
  * - The health icon is now easier to control via scripts.
