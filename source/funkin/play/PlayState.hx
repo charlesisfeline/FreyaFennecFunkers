@@ -1211,13 +1211,15 @@ class PlayState extends MusicBeatSubState
         // trace('RESET = True');
       }
 
-      #if CAN_CHEAT // brandon's a pussy
-      if (controls.CHEAT)
-      {
-        health += 0.25 * Constants.HEALTH_MAX; // +25% health.
-        // trace('User is cheating!');
-      }
-      #end
+      /*
+        #if CAN_CHEAT // brandon's a pussy
+        if (controls.CHEAT)
+        {
+          health += 0.25 * Constants.HEALTH_MAX; // +25% health.
+          // trace('User is cheating!');
+        }
+        #end
+       */
 
       if (health <= Constants.HEALTH_MIN && !isPracticeMode && !isPlayerDying)
       {
