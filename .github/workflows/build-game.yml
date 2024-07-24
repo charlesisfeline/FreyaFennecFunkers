@@ -50,7 +50,7 @@ jobs:
           haxelib install hmm --quiet
           haxelib run hmm setup
           haxelib run hmm install --quiet
-          haxelib install hxp
+          haxelib install hxp --quiet
           haxelib run lime build windows
         shell: cmd
       - name: Uploading artifact (entire build)
@@ -86,3 +86,77 @@ jobs:
             export/debug/windows/haxe/
             export/debug/windows/obj/
           key: cache-build-windows
+  buildWindowsDebug:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+    # The name of the job
+    name: Windows x64 Build (DEBUG)
+    permissions:
+       contents: write
+       actions: write
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Pulling the new commit
+        uses: actions/checkout@main
+        with:
+          submodules: true # PLEASE LEAVE SUBMODULES ENABLED!!!!!!!!!!
+      - name: Setting up Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.5
+      # Took the caching functions from Codename Engine, because yes!
+      - name: Restore existing build cache for faster compilation
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          key: cache-build-windows
+          path: |
+            export/release/windows/haxe/
+            export/release/windows/obj/
+
+      # Runs a set of commands using the runners shell
+      - name: Install libraries and build
+        run: |
+          haxelib setup C:/haxelib
+          haxelib install hxcpp > /dev/null --quiet
+          haxelib install hmm --quiet
+          haxelib run hmm setup
+          haxelib run hmm install --quiet
+          haxelib install hxp --quiet
+          haxelib run lime build windows -debug
+        shell: cmd
+      - name: Uploading artifact (entire build)
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: FNFVsFreyaModDebug
+          path: export/release/windows/bin
+      - name: Clear already existing cache
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const caches = await github.rest.actions.getActionsCacheList({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
+            for (const cache of caches.data.actions_caches) {
+              if (cache.key == "cache-build-windows") {
+                console.log('Clearing ' + cache.key + '...')
+                await github.rest.actions.deleteActionsCacheById({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  cache_id: cache.id,
+                })
+                console.log("Cache cleared.")
+              }
+            }
+      - name: Save new cache
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            export/release/windows/haxe/
+            export/release/windows/obj/
+            export/debug/windows/haxe/
+            export/debug/windows/obj/
+          key: cache-build-windows
+
