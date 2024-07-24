@@ -283,7 +283,7 @@ class HealthIcon extends FunkinSprite
     }
   }
 
-  public static function dominantColor(sprite:flixel.FlxSprite):Int
+  public function dominantColor(sprite:flixel.FlxSprite):Int
   {
     var countByColor:Map<Int, Int> = [];
     for (col in 0...sprite.frameWidth)
@@ -317,7 +317,7 @@ class HealthIcon extends FunkinSprite
     }
     return maxKey;
   }
-  
+
   inline function initTargetSize():Void
   {
     setGraphicSize(HEALTH_ICON_SIZE);
