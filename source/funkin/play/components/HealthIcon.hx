@@ -8,7 +8,7 @@ import funkin.play.character.CharacterData.CharacterDataParser;
 import openfl.utils.Assets;
 import funkin.graphics.FunkinSprite;
 import funkin.util.MathUtil;
-import funkin.util.FlxColor;
+import flixel.util.FlxColor;
 
 /**
  * This is a rework of the health icon with the following changes:
