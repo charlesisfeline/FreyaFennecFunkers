@@ -355,8 +355,7 @@ class SustainTrail extends FlxSprite
     fullSustainLength = 0;
     noteData = null;
 
-    hitNote = false;
-    missedNote = false;
+    missedNote = hitNote = false;
   }
 
   public override function revive():Void
@@ -369,9 +368,9 @@ class SustainTrail extends FlxSprite
     fullSustainLength = 0;
     noteData = null;
 
-    hitNote = false;
-    missedNote = false;
-    handledMiss = false;
+    noAnimation = false;
+
+    handledMiss = missedNote = hitNote = false;
   }
 
   override public function destroy():Void
