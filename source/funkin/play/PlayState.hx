@@ -1724,10 +1724,10 @@ class PlayState extends MusicBeatSubState
     add(funnySexBox);
 
     // The score text below the health bar.
-    scoreText = new FlxText(healthBarBG.x + 10, healthBarBG.y + 50, 0, '', 20);
+    scoreText = new FlxText(0, healthBarBG.y + 41, FlxG.width, "", 20);
     scoreText.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
     scoreText.scrollFactor.set();
-    scoreText.zIndex = 802;
+    scoreText.zIndex = 851;
     add(scoreText);
     funnySexBox.scale.x = scoreText.fieldWidth;
 
@@ -2248,7 +2248,7 @@ class PlayState extends MusicBeatSubState
   /**
    * Updates the position and contents of the score display.
    */
-  function updateScoreText():Void
+  public function updateScoreText():Void
   {
     var accuracy:String = "?";
     if (totalNotesPlayed != 0)
@@ -2256,12 +2256,8 @@ class PlayState extends MusicBeatSubState
       var percent:Float = Math.floor(ratingPercent * 100 * 2);
       accuracy = percent + '%';
     }
-
     // TODO: Add functionality for modules to update the score text.
-    if (isBotPlayMode) scoreText.text = 'BOTPLAY (Scores will NOT be saved!)';
-    else if (Preferences.expandedScore) scoreText.text = 'Score: $songScore • Misses: $songMisses • Accuracy: $accuracy';
-    else
-      scoreText.text = 'Score:' + songScore;
+    scoreText.text = '[ Score: $songScore • Misses: $songMisses/$totalNotesPlayed • Accuracy: $accuracy ]';
   }
 
   public var goMaxHealth:Bool = false;
@@ -2908,7 +2904,7 @@ class PlayState extends MusicBeatSubState
         ratingFC = 'Clear';
     }
 
-    judgementCounter.text = 'NPS: ${notesPerSecond} (Max: ${maxNps})\n\nSick!! - ${sickJudge}\nGood! - ${goodJudge}\nBad - ${badJudge}\nShit - ${shitJudge}';
+    judgementCounter.text = 'NPS: ${notesPerSecond} (Max: ${maxNps})\n\nSlayy!! - ${sickJudge}\nGood! - ${goodJudge}\nBad - ${badJudge}\nShit - ${shitJudge}';
 
     health += healthChange;
 
@@ -2962,8 +2958,7 @@ class PlayState extends MusicBeatSubState
     {
       // If daRating is 'miss', that means we made a mistake and should not continue.
       FlxG.log.warn('popUpScore judged a note as a miss!');
-      // TODO: Remove this.
-      // comboPopUps.displayRating('miss');
+      comboPopUps.displayRating('miss');
       return;
     }
     if (combo == null) combo = Highscore.tallies.combo;

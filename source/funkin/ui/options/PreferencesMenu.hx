@@ -57,11 +57,11 @@ class PreferencesMenu extends Page
     descTextBG.scale.x = descText.width + DESC_BG_OFFSET_X * 2;
     descTextBG.updateHitbox();
 
-    add(descTextBG);
-    add(descText);
-
     add(items = new TextMenuList());
     add(preferenceItems = new FlxTypedSpriteGroup<FlxSprite>());
+
+    add(descTextBG);
+    add(descText);
 
     createPrefItems();
 
