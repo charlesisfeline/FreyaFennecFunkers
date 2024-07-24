@@ -954,31 +954,31 @@ class PlayState extends MusicBeatSubState
     return true;
   }
 
-  var ratingFC:String = '';
-  var ratingPercent:Float;
+  /* var ratingFC:String = '';
+    var ratingPercent:Float;
 
-  function updateCombo()
-  {
-    ratingFC = 'Clear';
-    if (shits == 0 && bads == 0 && goods == 0 && sicks == 0 && songMisses == 0) ratingFC = '?';
-    if (songMisses < 1)
+    function updateCombo()
     {
-      if (bads > 0 || shits > 0) ratingFC = 'FC';
-      else if (goods > 0) ratingFC = 'GFC';
-      else if (sicks > 0) ratingFC = 'SFC';
+      ratingFC = 'Clear';
+      if (shits == 0 && bads == 0 && goods == 0 && sicks == 0 && songMisses == 0) ratingFC = '?';
+      if (songMisses < 1)
+      {
+        if (bads > 0 || shits > 0) ratingFC = 'FC';
+        else if (goods > 0) ratingFC = 'GFC';
+        else if (sicks > 0) ratingFC = 'SFC';
+      }
+      else if (songMisses < 10) ratingFC = 'SDCB';
+      updatePercentage();
     }
-    else if (songMisses < 10) ratingFC = 'SDCB';
-    updatePercentage();
-  }
 
-  function updatePercentage()
-  {
-    // This will be fixed to be accurate to how the results screen works.
-    var totalNotesHit = Highscore.tallies.totalNotesHit;
-    totalNotesHit = totalNotesHit - songMisses;
-    ratingPercent = Math.min(1, Math.max(0, totalNotesHit / totalPlayed));
-  }
-
+    function updatePercentage()
+    {
+      // This will be fixed to be accurate to how the results screen works.
+      var totalNotesHit = Highscore.tallies.totalNotesHit;
+      totalNotesHit = totalNotesHit - songMisses;
+      ratingPercent = Math.min(1, Math.max(0, totalNotesHit / totalPlayed));
+    }
+   */
   public override function update(elapsed:Float):Void
   {
     // TOTAL: 9.42% CPU Time when profiled in VS 2019.
@@ -990,7 +990,7 @@ class PlayState extends MusicBeatSubState
     var list = FlxG.sound.list;
     updateHealthBar();
     updateScoreText();
-    updateCombo();
+    // updateCombo();
 
     // Handle restarting the song when needed. (player death or pressing Retry)
     if (needsReset)
