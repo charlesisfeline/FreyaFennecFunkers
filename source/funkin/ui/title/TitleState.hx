@@ -329,7 +329,7 @@ class TitleState extends MusicBeatState
         trace("Update Version: " + updateVersion);
 
         // This makes it so if your in debug mode the Outdated screen will not appear
-        #if debug
+        #if (debug || FORCE_DEBUG_VERSION)
         FlxG.switchState(() -> new MainMenuState());
         trace("Your in debug mode!");
         #else

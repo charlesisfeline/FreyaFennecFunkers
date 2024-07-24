@@ -260,7 +260,7 @@ class FreeplayState extends MusicBeatSubState
 
     var isDebug:Bool = false;
 
-    #if debug
+    #if (debug || FORCE_DEBUG_VERSION)
     isDebug = true;
     #end
 
@@ -439,7 +439,7 @@ class FreeplayState extends MusicBeatSubState
         Reversed: false,
         // ?OnComplete:Void -> Void,
         ShowPivot: false,
-        Antialiasing: true,
+        Antialiasing: Preferences.antialiasing,
         ScrollFactor: new FlxPoint(1, 1),
       });
 
@@ -1194,7 +1194,7 @@ class FreeplayState extends MusicBeatSubState
   {
     super.update(elapsed);
 
-    #if debug
+    #if (debug || FORCE_DEBUG_VERSION)
     if (FlxG.keys.justPressed.T)
     {
       rankAnimStart(fromResultsParams);

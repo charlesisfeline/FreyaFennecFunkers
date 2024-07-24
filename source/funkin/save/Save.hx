@@ -97,6 +97,7 @@ class Save
           antialiasing: true,
           middlescroll: false,
           flashingLights: true,
+          songPositionBar: true,
           zoomCamera: true,
           coloredHealthBar: true,
           expandedScore: true,
@@ -1131,6 +1132,12 @@ typedef SaveDataOptions =
    * @default `true`
    */
   var debugDisplay:Bool;
+
+  /**
+   * Adds a song position bar.
+   * @default `true`
+   */
+  var songPositionBar:Bool;
 
   /**
    * Changes default health bar colors to characters dominant color from health icon.

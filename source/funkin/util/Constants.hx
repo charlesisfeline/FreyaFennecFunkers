@@ -20,7 +20,7 @@ class Constants
    * The title of the game, for debug printing purposes.
    * Change this if you're making an engine.
    */
-  public static final TITLE:String = "Friday Night Funkin': Vs. Freya Crew";
+  public static final TITLE:String = "FNF: Kitsune Engine (FF_F)";
 
   /**
    * The current version number of the game.
@@ -42,7 +42,7 @@ class Constants
    * A suffix to add to the game version.
    * Add a suffix to prototype builds and remove it for releases.
    */
-  public static final VERSION_SUFFIX:String = #if (DEBUG || FORCE_DEBUG_VERSION) ' PROTOTYPE' #else '' #end;
+  public static final VERSION_SUFFIX:String = #if (DEBUG || FORCE_DEBUG_VERSION) ' DEBUG' #else '' #end;
 
   #if (debug || FORCE_DEBUG_VERSION)
   static function get_VERSION():String

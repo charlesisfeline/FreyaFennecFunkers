@@ -1,5 +1,6 @@
 package funkin.play;
 
+import funkin.play.components.SongPosBar;
 import flixel.addons.display.FlxPieDial;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.transition.Transition;
@@ -556,6 +557,11 @@ class PlayState extends MusicBeatSubState
   var scoreText:FlxText;
 
   /**
+   * The bar which displays the song position.
+   */
+  var songPositionBar:SongPosBar;
+
+  /**
    * The bar which displays the player's health.
    * Dynamically updated based on the value of `healthLerp` (which is based on `health`).
    */
@@ -669,7 +675,7 @@ class PlayState extends MusicBeatSubState
   /**
    * The length of the current song, in milliseconds.
    */
-  var currentSongLengthMs(get, never):Float;
+  public var currentSongLengthMs(get, never):Float;
 
   function get_currentSongLengthMs():Float
   {
@@ -1693,6 +1699,13 @@ class PlayState extends MusicBeatSubState
     healthBar.zIndex = 800;
     add(healthBar);
 
+    if (Preferences.songPositionBar && !isMinimalMode)
+    {
+      songPositionBar = new SongPosBar();
+      songPositionBar.zIndex = 802;
+      add(songPositionBar);
+    }
+
     funnySexBox = new FlxSprite(healthBarBG.x + healthBarBG.width - 545, healthBarBG.y + 41).makeGraphic(500, 20, FlxColor.BLACK);
     funnySexBox.alpha = 0.3;
     add(funnySexBox);
@@ -1848,7 +1861,10 @@ class PlayState extends MusicBeatSubState
     }
 
     // CREATE HEALTH BAR WITH CHARACTERS COLORS
-    if (Preferences.coloredHealthBar) healthBar.createFilledBar(iconP2.dominantColor(), iconP1.dominantColor());
+    if (Preferences.coloredHealthBar) healthBar.createFilledBar(iconP2.getDominantColor(), iconP1.getDominantColor());
+
+    // CREATE SONG POSITION BAR
+    if (Preferences.songPositionBar) songPositionBar.initSongPosBar();
 
     //
     // ADD CHARACTERS TO SCENE

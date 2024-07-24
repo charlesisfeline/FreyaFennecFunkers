@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import funkin.graphics.FunkinSprite;
 import funkin.play.PlayState;
 import flixel.FlxG;
+import funkin.Preferences;
 
 // a unique object for santa getting KILLED
 
@@ -18,7 +19,7 @@ class SantaDiesSprite extends FlxAtlasSprite
       Reversed: false,
       // ?OnComplete:Void -> Void,
       ShowPivot: false,
-      Antialiasing: true,
+      Antialiasing: Preferences.antialiasing,
       ScrollFactor: new FlxPoint(1, 1),
     });
 

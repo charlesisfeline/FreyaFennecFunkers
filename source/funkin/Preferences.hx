@@ -233,6 +233,25 @@ class Preferences
   }
 
   /**
+   * Adds a song position bar.
+   * @default `true`
+   */
+  public static var songPositionBar(get, set):Bool;
+
+  static function get_songPositionBar():Bool
+  {
+    return Save?.instance?.options?.songPositionBar ?? true;
+  }
+
+  static function set_songPositionBar(value:Bool):Bool
+  {
+    var save:Save = Save.instance;
+    save.options.songPositionBar = value;
+    save.flush();
+    return value;
+  }
+
+  /**
    * If enabled, the game will automatically pause when tabbing out.
    * @default `true`
    */
