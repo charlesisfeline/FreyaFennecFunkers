@@ -686,7 +686,7 @@ class PlayState extends MusicBeatSubState
   var generatedMusic:Bool = false;
   var perfectMode:Bool = false;
 
-  static final BACKGROUND_COLOR:FlxColor = FlxColor.BLACK;
+  static final BACKGROUND_COLOR:FlxColor = FlxColor.WHITE;
 
   /**
    * Instantiate a new PlayState.
